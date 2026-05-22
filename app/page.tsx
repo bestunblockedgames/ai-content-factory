@@ -73,19 +73,20 @@ export default function HomePage() {
             <h2 className="text-sm font-semibold text-gray-400 mb-4">最近项目</h2>
             <div className="grid gap-3">
               {projects.map((p) => (
-                <GlassCard
+                <div
                   key={p.id}
-                  hover
                   className="cursor-pointer"
                   onClick={() => router.push(`/project/${p.id}`)}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-200">{p.topic}</span>
-                    <span className="text-xs text-gray-600">
-                      {new Date(p.updatedAt).toLocaleDateString('zh-CN')}
-                    </span>
-                  </div>
-                </GlassCard>
+                  <GlassCard hover>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-200">{p.topic}</span>
+                      <span className="text-xs text-gray-600">
+                        {new Date(p.updatedAt).toLocaleDateString('zh-CN')}
+                      </span>
+                    </div>
+                  </GlassCard>
+                </div>
               ))}
             </div>
           </div>

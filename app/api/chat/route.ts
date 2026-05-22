@@ -28,7 +28,8 @@ export async function POST(request: NextRequest) {
 
       let fullResponse = ''
       try {
-        for await (const chunk of streamChat(chatMessages, '你是一个AI内容创作助手。')) {
+        const chatStream = await streamChat(chatMessages, '你是一个AI内容创作助手。')
+        for await (const chunk of chatStream) {
           fullResponse += chunk
           controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: chunk })}\n\n`))
         }
