@@ -7,6 +7,16 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-blue?logo=tailwindcss)
 
+## 预览
+
+### 首页 - 项目管理
+
+![首页](data/1.png)
+
+### 工作台 - 可视化工作流编排
+
+![工作流编排](data/2.png)
+
 ## 功能特性
 
 ### 工作流编排
