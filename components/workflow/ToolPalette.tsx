@@ -10,17 +10,19 @@ const tools: ToolItem[] = [
   { type: 'knowledge', label: '知识库', icon: '📚', category: 'data', description: '检索知识库文档', defaultConfig: {} },
   { type: 'sql', label: 'SQL 查询', icon: '📊', category: 'data', description: '查询数据库', defaultConfig: {} },
   { type: 'python', label: 'Python', icon: '🐍', category: 'code', description: '执行 Python 脚本', defaultConfig: {} },
+  { type: 'custom', label: '自定义节点', icon: '✦', category: 'logic', description: '可配置的自定义逻辑', defaultConfig: {} },
 ]
 
 const categories = [
   { key: 'ai' as const, label: 'AI' },
   { key: 'data' as const, label: '数据' },
   { key: 'code' as const, label: '代码' },
+  { key: 'logic' as const, label: '逻辑' },
 ]
 
 export function ToolPalette() {
   const onDragStart = (event: React.DragEvent, tool: ToolItem) => {
-    event.dataTransfer.setData('application/reactflow-type', tool.type === 'llm' ? 'llm' : 'tool')
+    event.dataTransfer.setData('application/reactflow-type', tool.type === 'llm' ? 'llm' : tool.type === 'custom' ? 'custom' : 'tool')
     event.dataTransfer.setData('application/reactflow-data', JSON.stringify(tool))
     event.dataTransfer.effectAllowed = 'move'
   }

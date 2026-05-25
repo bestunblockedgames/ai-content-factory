@@ -1,7 +1,7 @@
 import { Node, Edge } from '@xyflow/react'
 import { Stage } from './index'
 
-export type ToolType = 'llm' | 'search' | 'http' | 'code' | 'knowledge' | 'sql' | 'python'
+export type ToolType = 'llm' | 'search' | 'http' | 'code' | 'knowledge' | 'sql' | 'python' | 'custom'
 
 export interface ToolItem {
   type: ToolType
@@ -27,6 +27,8 @@ export interface ToolNodeData extends Record<string, unknown> {
   endpoint?: string
   parameters?: Record<string, string>
   code?: string
+  description?: string
+  params?: Record<string, string>
 }
 
 export interface StartNodeData extends Record<string, unknown> {

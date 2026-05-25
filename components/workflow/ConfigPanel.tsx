@@ -106,6 +106,44 @@ export function ConfigPanel() {
     )
   }
 
+  if (selectedNode.type === 'custom') {
+    const d = selectedNode.data as unknown as ToolNodeData
+    return (
+      <div className="w-72 h-full border-l border-dark-border bg-dark-card/50 flex flex-col overflow-hidden">
+        <div className="px-4 py-3 border-b border-dark-border">
+          <h3 className="text-sm font-semibold text-gray-300">自定义节点配置</h3>
+        </div>
+        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <Field label="节点名称">
+            <input value={d.label || ''} onChange={(e) => update('label', e.target.value)} className="input-field" />
+          </Field>
+          <Field label="描述">
+            <textarea
+              value={d.description || ''}
+              onChange={(e) => update('description', e.target.value)}
+              rows={3}
+              className="input-field resize-none"
+              placeholder="描述此节点的用途..."
+            />
+          </Field>
+          <Field label="自定义参数">
+            <textarea
+              value={JSON.stringify(d.params || {}, null, 2)}
+              onChange={(e) => {
+                try {
+                  update('params', JSON.parse(e.target.value))
+                } catch {}
+              }}
+              rows={6}
+              className="input-field font-mono text-xs resize-none"
+              placeholder={'{"key": "value"}'}
+            />
+          </Field>
+        </div>
+      </div>
+    )
+  }
+
   // Start/End nodes
   return (
     <div className="w-72 h-full border-l border-dark-border bg-dark-card/50 flex flex-col overflow-hidden">

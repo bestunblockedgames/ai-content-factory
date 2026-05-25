@@ -32,6 +32,7 @@ const toolConfigs: Record<ToolType, { label: string; code?: string; endpoint?: s
   python: { label: 'Python 执行', code: 'print("hello")' },
   sql: { label: 'SQL 查询' },
   llm: { label: 'LLM 推理' },
+  custom: { label: '自定义逻辑' },
 }
 
 const llmConfigs = [
@@ -56,7 +57,7 @@ function generateWorkflowFromProject(projectId: string, stage: Stage, topic: str
     data: { label: '输入主题' },
   })
 
-  const toolTypes: ToolType[] = ['search', 'knowledge', 'code', 'python', 'sql', 'http']
+  const toolTypes: ToolType[] = ['search', 'knowledge', 'code', 'python', 'sql', 'http', 'custom']
   const stageTools: Record<Stage, ToolType[]> = {
     research: ['search', 'knowledge'],
     outline: ['knowledge', 'code'],
@@ -80,6 +81,7 @@ function generateWorkflowFromProject(projectId: string, stage: Stage, topic: str
         toolType,
         endpoint: cfg.endpoint,
         code: cfg.code,
+        ...(toolType === 'custom' ? { description: '自定义处理逻辑', params: { mode: 'auto' } } : {}),
       },
     })
   })
@@ -122,6 +124,7 @@ function generateWorkflowFromProject(projectId: string, stage: Stage, topic: str
         toolType,
         endpoint: cfg.endpoint,
         code: cfg.code,
+        ...(toolType === 'custom' ? { description: '后处理自定义逻辑', params: { mode: 'post' } } : {}),
       },
     })
   }

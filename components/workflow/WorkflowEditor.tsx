@@ -67,13 +67,20 @@ function WorkflowCanvas() {
               ? { label: '开始' }
               : type === 'end'
                 ? { label: '结束', outputFormat: 'markdown' }
-                : {
-                    label: toolData?.label || '工具',
-                    toolType: toolData?.type || 'search',
-                    endpoint: '',
-                    parameters: {},
-                    code: '',
-                  },
+                : type === 'custom'
+                  ? {
+                      label: toolData?.label || '自定义节点',
+                      toolType: 'custom' as const,
+                      description: '',
+                      params: {},
+                    }
+                  : {
+                      label: toolData?.label || '工具',
+                      toolType: toolData?.type || 'search',
+                      endpoint: '',
+                      parameters: {},
+                      code: '',
+                    },
       }
 
       addNode(newNode)
