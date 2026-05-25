@@ -1,0 +1,207 @@
+{
+  "id": "enterprise-design-system",
+  "topic": "企业级设计系统搭建实战",
+  "stage": "outline",
+  "research": {
+    "summary": "设计系统是企业保持产品一致性和提升设计效率的关键基础设施。根据设计系统成熟度调研，成熟的设计系统可以将设计复用率提升60%，减少40%的设计决策时间，新员工上手时间缩短50%。从Ant Design到Material Design，从Apple HIG到IBM Carbon，设计系统已经从大公司的专属工具变成了各类企业的标配。本调研深入分析了设计系统的核心价值、组成部分、搭建方法和成功案例。",
+    "keyPoints": [
+      "设计系统核心价值：一致性(品牌统一)、效率(复用率提升60%)、可扩展(支持多产品线)",
+      "核心组成：设计Token(颜色/字体/间距)、组件库(Button/Card/Modal)、文档(使用指南)、工具(Figma插件/代码生成)",
+      "成功案例：Ant Design(阿里)、Material Design(Google)、Apple HIG、IBM Carbon、Shopify Polaris",
+      "搭建步骤：调研(4周) → 规划(2周) → 设计(8周) → 开发(12周) → 推广(4周) → 迭代(持续)",
+      "常见陷阱：过度设计(追求完美而忽略实用)、缺乏维护(组件过时)、推广不足(团队不用)",
+      "ROI数据：投资回报周期6-12个月，3年ROI可达300%"
+    ],
+    "sources": [
+      "Design Systems Handbook by InVision",
+      "Atomic Design by Brad Frost",
+      "Design Systems Survey 2026 (Smashing Magazine)",
+      "Figma Design Systems Conference 2026",
+      "Ant Design Official Documentation",
+      "Material Design Guidelines (Google)"
+    ]
+  },
+  "outline": [
+    {
+      "id": "o1",
+      "title": "什么是设计系统",
+      "level": 1,
+      "children": [
+        {
+          "id": "o1-1",
+          "title": "设计系统 vs 组件库 vs 样式指南",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o1-2",
+          "title": "为什么企业需要设计系统",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o1-3",
+          "title": "设计系统的核心价值",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "o2",
+      "title": "设计系统的核心组成",
+      "level": 1,
+      "children": [
+        {
+          "id": "o2-1",
+          "title": "设计Token：原子级设计规范",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o2-2",
+          "title": "组件库：可复用的UI模块",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o2-3",
+          "title": "文档系统：使用指南与规范",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o2-4",
+          "title": "工具链：设计-开发协作流程",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "o3",
+      "title": "从0到1搭建设计系统",
+      "level": 1,
+      "children": [
+        {
+          "id": "o3-1",
+          "title": "第一阶段：调研与规划（6周）",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o3-2",
+          "title": "第二阶段：设计与开发（20周）",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o3-3",
+          "title": "第三阶段：推广与迭代（持续）",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "o4",
+      "title": "设计系统的维护与演进",
+      "level": 1,
+      "children": [
+        {
+          "id": "o4-1",
+          "title": "版本管理与变更策略",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o4-2",
+          "title": "社区建设与贡献机制",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o4-3",
+          "title": "度量与持续优化",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "o5",
+      "title": "成功案例深度解析",
+      "level": 1,
+      "children": [
+        {
+          "id": "o5-1",
+          "title": "Ant Design：从0到1的实践经验",
+          "level": 2,
+          "children": []
+        },
+        {
+          "id": "o5-2",
+          "title": "Shopify Polaris：电商场景的设计系统",
+          "level": 2,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "content": [],
+  "images": [
+    {
+      "id": "img-1",
+      "description": "设计系统架构图：Token层 → 组件层 → 模板层 → 页面层",
+      "placement": "文章开头",
+      "style": "架构图、专业、清晰"
+    },
+    {
+      "id": "img-2",
+      "description": "设计系统组成元素展示：颜色、字体、间距、组件",
+      "placement": "核心组成章节",
+      "style": "元素展示、色彩丰富"
+    },
+    {
+      "id": "img-3",
+      "description": "设计系统搭建时间线甘特图",
+      "placement": "搭建步骤章节",
+      "style": "甘特图、时间线、专业"
+    },
+    {
+      "id": "img-4",
+      "description": "Ant Design组件库界面截图",
+      "placement": "成功案例章节",
+      "style": "截图、真实界面"
+    }
+  ],
+  "exports": [],
+  "messages": [
+    {
+      "id": "msg-1",
+      "role": "user",
+      "content": "写一篇关于企业级设计系统搭建的文章，要有实战经验，不是纯理论",
+      "timestamp": "2026-05-23T08:00:00Z"
+    },
+    {
+      "id": "msg-2",
+      "role": "assistant",
+      "content": "好的！我来帮你规划一篇企业级设计系统搭建的深度文章。让我先调研一下设计系统的最新趋势和最佳实践...\n\n📊 调研发现：\n- 成熟设计系统：设计复用率提升60%\n- 新员工上手时间缩短50%\n- 投资回报周期6-12个月，3年ROI达300%\n- 成功案例：Ant Design、Material Design、Shopify Polaris\n\n接下来我来构建文章大纲，侧重实战经验而非纯理论。你看看结构是否合适？",
+      "timestamp": "2026-05-23T08:03:00Z"
+    },
+    {
+      "id": "msg-3",
+      "role": "user",
+      "content": "大纲不错，但我想多一些实际案例分析，特别是踩坑经验",
+      "timestamp": "2026-05-23T08:10:00Z"
+    },
+    {
+      "id": "msg-4",
+      "role": "assistant",
+      "content": "明白！我来调整大纲，增加案例分析和踩坑经验：\n\n📝 调整后的结构：\n\n1️⃣ 什么是设计系统（保留，精简理论）\n\n2️⃣ 设计系统的核心组成\n- 设计Token：颜色、字体、间距规范\n- 组件库：从原子到分子到有机体\n- 文档系统：如何写好使用指南\n\n3️⃣ 从0到1搭建设计系统（重点）\n- 阶段一：调研与规划\n  - 如何评估是否需要设计系统\n  - 利益相关者沟通技巧\n  - 预算和资源规划\n- 阶段二：设计与开发\n  - 最小组件集选择（先做哪些）\n  - 设计-开发协作流程\n  - 版本管理策略\n- 阶段三：推广与迭代\n  - 如何让团队愿意用\n  - 收集反馈和持续优化\n\n4️⃣ 踩坑经验集（新增）\n- 6个真实踩坑案例\n- 每个案例：问题描述 → 原因分析 → 解决方案 → 经验总结\n\n5️⃣ 成功案例深度解析\n- Ant Design实战经验\n- Shopify Polaris设计思路\n\n这个结构更侧重实战，你觉得怎么样？",
+      "timestamp": "2026-05-23T08:10:30Z"
+    }
+  ],
+  "createdAt": "2026-05-23T08:00:00Z",
+  "updatedAt": "2026-05-23T08:10:30Z"
+}

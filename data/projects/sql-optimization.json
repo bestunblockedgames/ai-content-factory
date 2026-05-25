@@ -1,0 +1,73 @@
+{
+  "id": "sql-optimization",
+  "topic": "SQL性能调优实战：让查询速度提升100倍",
+  "stage": "publish",
+  "research": {
+    "summary": "SQL性能问题是后端开发最常见的瓶颈。根据Percona 2026年调研，80%的慢查询可以通过索引优化、查询重写、表结构调整来解决，无需升级硬件。掌握SQL调优技巧可以让查询速度提升10-100倍。",
+    "keyPoints": [
+      "慢查询诊断：EXPLAIN分析(必用)、慢查询日志(阈值1s)、执行计划优化",
+      "索引优化：B+Tree索引(最常用)、覆盖索引(避免回表)、联合索引最左前缀原则",
+      "查询重写：子查询转JOIN(提升30%)、避免SELECT *(减少IO)、分页优化(游标分页)",
+      "常见问题：全表扫描(45%)、索引失效(25%)、锁等待(20%)、内存不足(10%)",
+      "性能指标：查询响应时间<100ms、索引命中率>95%、慢查询比例<1%"
+    ],
+    "sources": [
+      "MySQL Performance Blog (Percona)",
+      "High Performance MySQL (O'Reilly)",
+      "Database Reliability Engineering"
+    ]
+  },
+  "outline": [
+    {
+      "id": "o1",
+      "title": "慢查询诊断方法论",
+      "level": 1,
+      "children": [
+        {"id": "o1-1", "title": "EXPLAIN执行计划详解", "level": 2, "children": []},
+        {"id": "o1-2", "title": "慢查询日志配置与分析", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o2",
+      "title": "索引优化实战",
+      "level": 1,
+      "children": [
+        {"id": "o2-1", "title": "索引类型与选择", "level": 2, "children": []},
+        {"id": "o2-2", "title": "联合索引设计原则", "level": 2, "children": []},
+        {"id": "o2-3", "title": "索引失效场景", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o3",
+      "title": "查询重写技巧",
+      "level": 1,
+      "children": []
+    }
+  ],
+  "content": [
+    {"id": "c1", "type": "heading", "content": "SQL性能调优实战：让查询速度提升100倍", "order": 1},
+    {"id": "c2", "type": "paragraph", "content": "线上数据库突然变慢？查询超时？订单接口响应时间从50ms飙升到5秒？本文带你从诊断到优化，系统掌握SQL调优方法论，让查询速度提升100倍。", "order": 2},
+    {"id": "c3", "type": "heading", "content": "慢查询诊断方法论", "order": 3},
+    {"id": "c4", "type": "paragraph", "content": "诊断SQL性能问题的第一步是使用EXPLAIN分析执行计划。EXPLAIN可以告诉你MySQL是如何执行你的查询的，包括是否使用了索引、扫描了多少行、是否使用了临时表等关键信息。", "order": 4},
+    {"id": "c5", "type": "code", "content": "-- 使用EXPLAIN分析查询\nEXPLAIN SELECT * FROM orders\nWHERE user_id = 10086\nAND status = 'paid'\nORDER BY created_at DESC;\n\n-- 关键字段解读：\n-- type: ALL(全表扫描) → index → range → ref → eq_ref → const\n-- key: 使用的索引名\n-- rows: 预估扫描行数\n-- Extra: Using filesort(需优化) / Using temporary(需优化)", "order": 5},
+    {"id": "c6", "type": "code", "content": "-- ❌ 错误：全表扫描 + 文件排序\nSELECT * FROM orders\nWHERE user_id = 10086\nORDER BY created_at DESC;\n-- 执行时间: 2.3s，扫描行数: 1,000,000\n\n-- ✅ 正确：添加联合索引\nCREATE INDEX idx_user_created\nON orders(user_id, created_at DESC);\n-- 执行时间: 0.02s，扫描行数: 45\n-- 提升115倍！", "order": 6}
+  ],
+  "images": [
+    {"id": "img1", "description": "EXPLAIN执行计划解读图解", "placement": "慢查询诊断章节", "style": "图解、专业"},
+    {"id": "img2", "description": "索引类型对比：B+Tree vs Hash vs Full-text", "placement": "索引优化章节", "style": "对比表格"}
+  ],
+  "exports": [
+    {"platform": "zhihu", "content": "# SQL性能调优实战：让查询速度提升100倍\n\n> 线上数据库变慢？本文带你从诊断到优化，系统掌握SQL调优方法论。\n\n## 慢查询诊断\n\n使用EXPLAIN分析执行计划...\n\n## 索引优化\n\n联合索引可以将查询从2.3s优化到0.02s...\n\n[阅读全文]", "formattedAt": "2026-05-01T10:00:00Z"},
+    {"platform": "wechat", "content": "【数据库优化】SQL查询从2秒到0.02秒 🚀\n\n线上数据库变慢怎么办？\n\n本文教你：\n✅ EXPLAIN诊断慢查询\n✅ 索引优化实战\n✅ 查询重写技巧\n\n#SQL #数据库 #性能优化", "formattedAt": "2026-05-01T11:00:00Z"}
+  ],
+  "messages": [
+    {"id": "m1", "role": "user", "content": "写一篇SQL优化实战文章，要有真实的优化案例", "timestamp": "2026-04-28T10:00:00Z"},
+    {"id": "m2", "role": "assistant", "content": "好的！SQL优化是后端必备技能。我会从慢查询诊断开始，逐步讲索引优化和查询重写。\n\n📊 调研发现：\n- 80%慢查询可通过优化解决\n- 索引优化是最有效的手段\n- 联合索引设计是关键\n\n文章结构：\n1. 慢查询诊断方法论\n2. 索引优化实战\n3. 查询重写技巧\n4. 真实案例分析\n\n开始撰写中...", "timestamp": "2026-04-28T10:01:00Z"},
+    {"id": "m3", "role": "user", "content": "要有优化前后的对比数据，这样更有说服力", "timestamp": "2026-04-28T10:20:00Z"},
+    {"id": "m4", "role": "assistant", "content": "明白！每个优化点都会配上优化前后的对比数据：\n\n📊 优化案例数据：\n1. 联合索引：2.3s → 0.02s（提升115倍）\n2. 覆盖索引：0.8s → 0.01s（提升80倍）\n3. 子查询转JOIN：1.5s → 0.1s（提升15倍）\n4. 游标分页：2.1s → 0.03s（提升70倍）\n\n每个案例都包含：\n- 问题描述\n- 诊断过程\n- 优化方案\n- 效果对比\n\n正在完善中...", "timestamp": "2026-04-28T10:21:00Z"},
+    {"id": "m5", "role": "user", "content": "完成得很好，发布到知乎和微信", "timestamp": "2026-05-01T09:00:00Z"},
+    {"id": "m6", "role": "assistant", "content": "已生成知乎和微信两个平台的版本！\n\n📝 知乎版：深度技术分析+完整代码\n💬 微信版：精华提炼+emoji排版\n\n请检查内容，确认无误后即可发布！", "timestamp": "2026-05-01T09:05:00Z"}
+  ],
+  "createdAt": "2026-04-28T10:00:00Z",
+  "updatedAt": "2026-05-01T11:00:00Z"
+}

@@ -59,3 +59,36 @@ body {
   background-size: 200% 100%;
   animation: data-flow 2s linear infinite;
 }
+
+.input-field {
+  width: 100%;
+  background: #0a0a0f;
+  border: 1px solid #2a3040;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #e0e0e0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: rgba(0, 245, 212, 0.5);
+}
+
+/* React Flow overrides */
+.react-flow__node {
+  cursor: pointer;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__controls {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.react-flow__minimap {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}

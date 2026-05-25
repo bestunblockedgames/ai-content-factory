@@ -2,25 +2,35 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'next/navigation'
-import { Navbar } from '@/components/layout/Navbar'
-import { PipelineBar } from '@/components/pipeline/PipelineBar'
+import { TopBar } from '@/components/layout/TopBar'
+import { ToolPalette } from '@/components/workflow/ToolPalette'
+import { WorkflowEditor } from '@/components/workflow/WorkflowEditor'
+import { ConfigPanel } from '@/components/workflow/ConfigPanel'
 import { ChatPanel } from '@/components/chat/ChatPanel'
-import { PreviewPanel } from '@/components/preview/PreviewPanel'
-import { Project, Stage, STAGES } from '@/types'
+import { DebugView } from '@/components/workflow/views/DebugView'
+import { MonitorView } from '@/components/workflow/views/MonitorView'
+import { PublishView } from '@/components/workflow/views/PublishView'
+import { useWorkflowStore } from '@/store/useWorkflowStore'
+import { Project } from '@/types'
 
 export default function ProjectPage() {
   const params = useParams()
   const projectId = params.id as string
   const [project, setProject] = useState<Project | null>(null)
   const [loading, setLoading] = useState(true)
+  const [showChat, setShowChat] = useState(true)
+  const mode = useWorkflowStore((s) => s.mode)
+  const loadProjectWorkflow = useWorkflowStore((s) => s.loadProjectWorkflow)
 
   const fetchProject = useCallback(async () => {
     const res = await fetch(`/api/project/${projectId}`)
     if (res.ok) {
-      setProject(await res.json())
+      const p = await res.json()
+      setProject(p)
+      loadProjectWorkflow(projectId, p.stage, p.topic)
     }
     setLoading(false)
-  }, [projectId])
+  }, [projectId, loadProjectWorkflow])
 
   useEffect(() => {
     fetchProject()
@@ -35,7 +45,7 @@ export default function ProjectPage() {
       content: message,
       timestamp: new Date().toISOString(),
     }
-    setProject((p) => p ? { ...p, messages: [...p.messages, userMsg] } : p)
+    setProject((p) => (p ? { ...p, messages: [...p.messages, userMsg] } : p))
 
     const res = await fetch('/api/chat', {
       method: 'POST',
@@ -79,25 +89,6 @@ export default function ProjectPage() {
     fetchProject()
   }
 
-  const handleRunStage = async (stage: Stage) => {
-    if (!project) return
-    const res = await fetch(`/api/stages/${stage}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ projectId }),
-    })
-    if (res.ok) {
-      const updated = await res.json()
-      setProject(updated)
-    }
-  }
-
-  const completedStages = STAGES.filter((s) => {
-    const idx = STAGES.indexOf(s)
-    const currentIdx = STAGES.indexOf(project?.stage || 'research')
-    return idx < currentIdx
-  })
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -114,31 +105,63 @@ export default function ProjectPage() {
     )
   }
 
+  const renderMainContent = () => {
+    switch (mode) {
+      case 'orchestrate':
+        return (
+          <>
+            <ToolPalette />
+            <div className="flex-1 flex flex-col overflow-hidden">
+              <WorkflowEditor />
+              {showChat && (
+                <div className="border-t border-dark-border" style={{ height: '240px', flexShrink: 0 }}>
+                  <ChatPanel messages={project.messages} onSend={handleSend} />
+                </div>
+              )}
+              <button
+                onClick={() => setShowChat(!showChat)}
+                className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-gray-600 hover:text-gray-300 bg-dark-card/80 px-3 py-1 rounded-full border border-dark-border z-10"
+              >
+                {showChat ? '收起对话' : '展开对话'}
+              </button>
+            </div>
+            <ConfigPanel />
+          </>
+        )
+      case 'debug':
+        return (
+          <>
+            <ToolPalette />
+            <DebugView />
+            <ConfigPanel />
+          </>
+        )
+      case 'monitor':
+        return (
+          <>
+            <ToolPalette />
+            <MonitorView project={project} />
+            <ConfigPanel />
+          </>
+        )
+      case 'publish':
+        return (
+          <>
+            <ToolPalette />
+            <PublishView />
+            <ConfigPanel />
+          </>
+        )
+      default:
+        return null
+    }
+  }
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar title={project.topic} />
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <div className="flex-1 flex gap-4 p-4 overflow-hidden">
-          <div className="w-[30%] min-w-[300px]">
-            <ChatPanel
-              messages={project.messages}
-              onSend={handleSend}
-            />
-          </div>
-          <div className="flex-1">
-            <PreviewPanel
-              content={project.content}
-              topic={project.topic}
-            />
-          </div>
-        </div>
-        <div className="border-t border-dark-border">
-          <PipelineBar
-            currentStage={project.stage}
-            completedStages={completedStages}
-            onStageClick={handleRunStage}
-          />
-        </div>
+    <div className="h-screen flex flex-col overflow-hidden">
+      <TopBar projectName={project.topic} />
+      <div className="flex-1 flex overflow-hidden">
+        {renderMainContent()}
       </div>
     </div>
   )

@@ -1,0 +1,83 @@
+{
+  "id": "chatgpt-productivity",
+  "topic": "ChatGPT职场效率提升实战：10个让老板刮目相看的技巧",
+  "stage": "publish",
+  "research": {
+    "summary": "ChatGPT在职场中的应用已经从尝鲜阶段进入深度使用阶段。根据McKinsey 2026年调研，熟练使用ChatGPT的职场人平均每天节省2小时，效率提升35%。邮件处理、会议纪要、报告撰写是最高频的三大场景，分别占比68%、52%、45%。然而，大部分职场人只用了ChatGPT 20%的能力，掌握高级prompt技巧可以再提升50%的效率。",
+    "keyPoints": [
+      "职场人日均使用ChatGPT 47分钟，但仅发挥了20%的能力",
+      "最高频场景：邮件处理(68%)、会议纪要(52%)、报告撰写(45%)、翻译(38%)、数据分析(31%)",
+      "进阶技巧：自定义指令(提升60%)、角色扮演(提升45%)、分步骤提问(提升40%)、模板化prompt(提升55%)",
+      "常见误区：直接复制AI输出(38%)、不审核事实(25%)、过度依赖(15%)",
+      "ROI数据：每投入1小时学习prompt，每月可节省15小时工作时间"
+    ],
+    "sources": [
+      "McKinsey Digital - AI in the Workplace 2026",
+      "LinkedIn Workplace Report - AI Productivity",
+      "Harvard Business Review - Prompt Engineering for Business",
+      "Stanford HAI - AI Augmentation Study"
+    ]
+  },
+  "outline": [
+    {
+      "id": "o1",
+      "title": "为什么ChatGPT是2026年职场人的必备工具",
+      "level": 1,
+      "children": [
+        {"id": "o1-1", "title": "职场效率现状：你每天浪费了多少时间", "level": 2, "children": []},
+        {"id": "o1-2", "title": "AI辅助工作的正确姿势", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o2",
+      "title": "10个实战技巧详解",
+      "level": 1,
+      "children": [
+        {"id": "o2-1", "title": "技巧1-3：邮件与沟通类", "level": 2, "children": []},
+        {"id": "o2-2", "title": "技巧4-6：文档与报告类", "level": 2, "children": []},
+        {"id": "o2-3", "title": "技巧7-9：数据分析类", "level": 2, "children": []},
+        {"id": "o2-4", "title": "技巧10：创意与头脑风暴", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o3",
+      "title": "避坑指南：职场使用ChatGPT的红线",
+      "level": 1,
+      "children": [
+        {"id": "o3-1", "title": "信息安全：哪些内容绝对不能输入AI", "level": 2, "children": []},
+        {"id": "o3-2", "title": "事实核查：如何识别AI幻觉", "level": 2, "children": []}
+      ]
+    }
+  ],
+  "content": [
+    {"id": "c1", "type": "heading", "content": "ChatGPT职场效率提升实战：10个让老板刮目相看的技巧", "order": 1},
+    {"id": "c2", "type": "paragraph", "content": "在2026年的职场中，不会用ChatGPT就像2010年不会用Excel一样致命。根据LinkedIn最新调研，超过78%的企业已经将AI工具纳入日常工作流程，而那些熟练掌握ChatGPT的职场人，平均每天能节省2小时的重复性工作。但问题在于，大多数人只用了ChatGPT 20%的能力。", "order": 2},
+    {"id": "c3", "type": "heading", "content": "为什么你需要掌握ChatGPT", "order": 3},
+    {"id": "c4", "type": "paragraph", "content": "想象一下这个场景：周五下午5点，老板突然让你周一早上交一份市场分析报告。传统方式你需要花整个周末搜集资料、整理数据、撰写报告。但如果你掌握了ChatGPT，这个任务可以在2小时内完成——AI帮你搜集资料、生成初稿、优化措辞，你只需要审核和补充个人观点。", "order": 4},
+    {"id": "c5", "type": "list", "content": "- 邮件处理：从写回复到优化措辞，节省60%时间\n- 会议纪要：自动生成结构化纪要，节省80%时间\n- 报告撰写：从大纲到初稿，节省70%时间\n- 翻译润色：多语言翻译+风格调整，节省50%时间\n- 数据分析：自然语言查询数据库，节省65%时间\n- 创意策划：头脑风暴+方案生成，节省45%时间", "order": 5},
+    {"id": "c6", "type": "heading", "content": "技巧1：邮件处理的黄金模板", "order": 6},
+    {"id": "c7", "type": "paragraph", "content": "写邮件是最耗时的日常任务之一。用好这个Prompt模板，可以让ChatGPT帮你写出专业、得体的邮件：", "order": 7},
+    {"id": "c8", "type": "code", "content": "# 邮件撰写Prompt模板\n\n角色：你是一位资深商务沟通专家\n\n任务：帮我写一封邮件\n- 收件人：[客户/同事/上级]\n- 目的：[请求/回复/通知/感谢]\n- 语气：[正式/友好/紧急]\n- 关键信息：[列出要点]\n- 字数：[简短/详细]\n\n输出格式：\n1. 主题行（简洁有力）\n2. 正文（结构清晰）\n3. 结尾（恰当收尾）", "order": 8},
+    {"id": "c9", "type": "heading", "content": "技巧2：会议纪要自动生成", "order": 9},
+    {"id": "c10", "type": "paragraph", "content": "会议结束后，把录音转文字或笔记丢给ChatGPT，它能帮你生成结构化的会议纪要：", "order": 10},
+    {"id": "c11", "type": "code", "content": "# 会议纪要Prompt模板\n\n角色：你是一位专业的会议记录员\n\n任务：根据以下会议内容生成结构化纪要\n\n会议内容：\n[粘贴会议笔记或转录文字]\n\n输出格式：\n1. 会议主题\n2. 参会人员\n3. 关键讨论点（按重要性排序）\n4. 决策事项（含负责人和截止时间）\n5. 待办事项（Action Items）\n6. 下次会议安排", "order": 11}
+  ],
+  "images": [
+    {"id": "img1", "description": "ChatGPT职场效率提升数据图表：使用前后对比", "placement": "文章开头", "style": "数据可视化、对比鲜明"},
+    {"id": "img2", "description": "10个技巧分类展示：邮件/文档/数据/创意", "placement": "技巧概览", "style": "分类卡片、清晰"}
+  ],
+  "exports": [
+    {"platform": "zhihu", "content": "# ChatGPT职场效率提升实战：10个让老板刮目相看的技巧\n\n> 掌握这10个技巧，每天节省2小时工作时间。\n\n## 为什么你需要ChatGPT\n\n2026年，78%的企业已将AI纳入工作流程...\n\n[阅读全文]", "formattedAt": "2026-04-02T10:00:00Z"},
+    {"platform": "wechat", "content": "【职场干货】ChatGPT让你每天多出2小时 ⏰\n\n还在加班写报告？用ChatGPT只需2小时！\n\n本文分享10个实战技巧：\n✅ 邮件秒写\n✅ 会议纪要自动生成\n✅ 报告一键出稿\n\n#ChatGPT #职场效率 #AI办公", "formattedAt": "2026-04-02T11:00:00Z"}
+  ],
+  "messages": [
+    {"id": "m1", "role": "user", "content": "写一篇ChatGPT职场效率提升的文章，要实用，有具体的prompt模板", "timestamp": "2026-04-01T14:30:00Z"},
+    {"id": "m2", "role": "assistant", "content": "好的！我来写一篇实用的ChatGPT职场技巧文章。\n\n📊 调研发现：\n- 78%企业已将AI纳入工作流\n- 熟练使用者日均节省2小时\n- 大部分人只用了20%的能力\n\n文章结构：\n1. 为什么需要ChatGPT\n2. 10个实战技巧（含prompt模板）\n3. 避坑指南\n\n开始撰写中...", "timestamp": "2026-04-01T14:31:00Z"},
+    {"id": "m3", "role": "user", "content": "prompt模板要多一些，最好能直接复制使用", "timestamp": "2026-04-01T15:00:00Z"},
+    {"id": "m4", "role": "assistant", "content": "明白！我会为每个技巧都配上可直接复制使用的prompt模板。目前已规划：\n\n📝 邮件类模板（3个）\n- 商务邮件撰写\n- 邮件回复优化\n- 邮件翻译润色\n\n📋 文档类模板（3个）\n- 会议纪要生成\n- 报告大纲+初稿\n- PPT内容提炼\n\n📊 数据类模板（3个）\n- 数据分析解读\n- SQL查询生成\n- 图表建议\n\n💡 创意类模板（1个）\n- 头脑风暴+方案生成\n\n正在完善中...", "timestamp": "2026-04-01T15:01:00Z"},
+    {"id": "m5", "role": "user", "content": "完成得很好，发布到知乎和微信", "timestamp": "2026-04-02T09:00:00Z"},
+    {"id": "m6", "role": "assistant", "content": "已生成知乎和微信两个平台的版本！\n\n📝 知乎版：深度分析+完整模板\n💬 微信版：精华提炼+emoji排版\n\n请检查内容，确认无误后即可发布！", "timestamp": "2026-04-02T09:05:00Z"}
+  ],
+  "createdAt": "2026-04-01T14:30:00Z",
+  "updatedAt": "2026-04-02T11:00:00Z"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "wechat-miniapp",
+  "topic": "微信小程序从0到1开发实战：电商项目完整流程",
+  "stage": "images",
+  "research": {
+    "summary": "微信小程序日活超6亿，电商小程序GMV年增长45%。小程序开发门槛低、获客成本小，是创业者的首选渠道之一。根据2026年数据，小程序电商平均获客成本仅为App的1/3，用户留存率比H5高40%。",
+    "keyPoints": [
+      "技术选型：原生开发(性能最佳) vs Taro(React语法) vs uni-app(Vue语法)",
+      "核心功能：商品展示(98%)、购物车(95%)、微信支付(92%)、订单管理(88%)、优惠券(75%)",
+      "性能优化：分包加载(首屏提速40%)、图片压缩(WebP格式减小50%)、数据缓存(减少60%请求)",
+      "获客数据：小程序获客成本$2.5 vs App $7.8 vs H5 $4.2",
+      "成功案例：拼多多小程序贡献45% GMV、瑞幸咖啡小程序订单占比60%"
+    ],
+    "sources": [
+      "微信小程序官方文档",
+      "阿拉丁小程序生态报告2026",
+      "Taro官方文档"
+    ]
+  },
+  "outline": [
+    {
+      "id": "o1",
+      "title": "项目规划与技术选型",
+      "level": 1,
+      "children": [
+        {"id": "o1-1", "title": "小程序 vs App vs H5：如何选择", "level": 2, "children": []},
+        {"id": "o1-2", "title": "Taro vs uni-app vs 原生：技术选型", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o2",
+      "title": "UI设计与组件库选择",
+      "level": 1,
+      "children": []
+    },
+    {
+      "id": "o3",
+      "title": "核心功能开发",
+      "level": 1,
+      "children": [
+        {"id": "o3-1", "title": "商品列表与详情页", "level": 2, "children": []},
+        {"id": "o3-2", "title": "购物车实现", "level": 2, "children": []},
+        {"id": "o3-3", "title": "订单与支付", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o4",
+      "title": "性能优化与发布",
+      "level": 1,
+      "children": []
+    }
+  ],
+  "content": [
+    {"id": "c1", "type": "heading", "content": "微信小程序电商项目实战", "order": 1},
+    {"id": "c2", "type": "paragraph", "content": "本文将带你从零开始，使用Taro + React技术栈开发一个完整的电商小程序。从项目搭建到上架发布，覆盖商品、购物车、支付、订单全流程。", "order": 2},
+    {"id": "c3", "type": "heading", "content": "为什么选择小程序做电商", "order": 3},
+    {"id": "c4", "type": "paragraph", "content": "根据阿拉丁研究院2026年报告，小程序电商GMV同比增长45%，平均获客成本仅为App的1/3。拼多多小程序贡献了45%的GMV，瑞幸咖啡小程序订单占比达60%。这些数据说明，小程序已经是最高效的电商渠道之一。", "order": 4}
+  ],
+  "images": [
+    {"id": "img1", "description": "小程序电商项目架构图：Taro + React + Redux", "placement": "文章开头", "style": "架构图、专业"},
+    {"id": "img2", "description": "购物车交互流程图", "placement": "购物车章节", "style": "流程图、清晰"},
+    {"id": "img3", "description": "微信支付接入流程", "placement": "支付章节", "style": "流程图"}
+  ],
+  "exports": [],
+  "messages": [
+    {"id": "m1", "role": "user", "content": "写一篇微信小程序电商开发教程，用Taro + React技术栈", "timestamp": "2026-04-22T16:00:00Z"},
+    {"id": "m2", "role": "assistant", "content": "好的！电商小程序是个很好的实战项目。我来规划一下完整教程...\n\n📊 调研发现：\n- 小程序电商GMV增长45%\n- 获客成本仅为App的1/3\n- 拼多多小程序贡献45% GMV\n\n技术栈：Taro 4 + React 19 + Redux Toolkit\n\n文章结构：\n1. 项目规划与技术选型\n2. UI设计与组件库\n3. 核心功能开发\n4. 性能优化与发布\n\n开始撰写中...", "timestamp": "2026-04-22T16:02:00Z"},
+    {"id": "m3", "role": "user", "content": "要包含完整的代码示例，从项目搭建开始", "timestamp": "2026-04-22T16:20:00Z"},
+    {"id": "m4", "role": "assistant", "content": "明白！教程会从零开始，包含：\n\n✅ 项目初始化（Taro create）\n✅ 目录结构设计\n✅ 商品列表页实现\n✅ 购物车状态管理\n✅ 微信支付接入\n✅ 订单管理页面\n✅ 性能优化技巧\n✅ 上架发布流程\n\n每个步骤都有完整代码，可以直接跟着做。", "timestamp": "2026-04-22T16:21:00Z"},
+    {"id": "m5", "role": "user", "content": "内容差不多了，帮我生成配图建议", "timestamp": "2026-04-23T09:00:00Z"},
+    {"id": "m6", "role": "assistant", "content": "好的！配图方案：\n\n📸 1. 项目架构图\n- 展示Taro + React + Redux技术栈\n- 清晰的模块划分\n\n📸 2. 购物车交互流程\n- 从加入购物车到结算的完整流程\n- 状态变化可视化\n\n📸 3. 微信支付接入流程\n- 商户号配置→API调用→回调处理\n- 安全注意事项标注\n\n配图方案已生成！", "timestamp": "2026-04-23T09:05:00Z"}
+  ],
+  "createdAt": "2026-04-22T16:00:00Z",
+  "updatedAt": "2026-04-23T09:05:00Z"
+}

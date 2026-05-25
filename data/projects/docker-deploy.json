@@ -1,0 +1,71 @@
+{
+  "id": "docker-deploy",
+  "topic": "Docker容器化部署实战：从开发到生产环境",
+  "stage": "outline",
+  "research": {
+    "summary": "Docker已成为现代应用部署的事实标准。根据CNCF 2026年调研，92%的企业在使用容器技术，Docker是最流行的容器运行时。掌握Docker容器化部署可以显著提升开发效率和部署一致性，减少80%的环境相关问题。",
+    "keyPoints": [
+      "Docker核心概念：镜像(Image)、容器(Container)、仓库(Registry)、Dockerfile",
+      "最佳实践：多阶段构建(镜像减小60%)、镜像瘦身(Alpine基础镜像)、健康检查、日志管理",
+      "编排工具：Docker Compose(单机)、Kubernetes(集群)、Docker Swarm(轻量集群)",
+      "常见问题：镜像过大(45%)、构建速度慢(30%)、安全漏洞(25%)",
+      "2026趋势：Podman替代Docker Desktop、WebAssembly容器、eBPF网络优化"
+    ],
+    "sources": [
+      "Docker Official Documentation",
+      "CNCF Annual Survey 2026",
+      "Container Security Guide (O'Reilly)"
+    ]
+  },
+  "outline": [
+    {
+      "id": "o1",
+      "title": "Docker基础概念回顾",
+      "level": 1,
+      "children": [
+        {"id": "o1-1", "title": "镜像 vs 容器：一张图讲清楚", "level": 2, "children": []},
+        {"id": "o1-2", "title": "Docker安装与配置", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o2",
+      "title": "编写高效的Dockerfile",
+      "level": 1,
+      "children": [
+        {"id": "o2-1", "title": "多阶段构建详解", "level": 2, "children": []},
+        {"id": "o2-2", "title": "镜像瘦身技巧", "level": 2, "children": []},
+        {"id": "o2-3", "title": ".dockerignore优化", "level": 2, "children": []}
+      ]
+    },
+    {
+      "id": "o3",
+      "title": "Docker Compose多容器编排",
+      "level": 1,
+      "children": []
+    },
+    {
+      "id": "o4",
+      "title": "生产环境部署最佳实践",
+      "level": 1,
+      "children": [
+        {"id": "o4-1", "title": "健康检查与自动重启", "level": 2, "children": []},
+        {"id": "o4-2", "title": "日志管理与监控", "level": 2, "children": []},
+        {"id": "o4-3", "title": "CI/CD集成", "level": 2, "children": []}
+      ]
+    }
+  ],
+  "content": [],
+  "images": [
+    {"id": "img1", "description": "Docker架构图：Client → Docker Daemon → Registry", "placement": "文章开头", "style": "架构图、专业"},
+    {"id": "img2", "description": "多阶段构建流程图", "placement": "Dockerfile章节", "style": "流程图"}
+  ],
+  "exports": [],
+  "messages": [
+    {"id": "m1", "role": "user", "content": "写一篇Docker部署实战教程，要有完整的Dockerfile示例", "timestamp": "2026-04-18T11:00:00Z"},
+    {"id": "m2", "role": "assistant", "content": "好的！Docker部署是个很实用的主题。我先规划一下大纲结构...\n\n📊 调研发现：\n- 92%企业使用容器技术\n- 多阶段构建可减小60%镜像\n- Alpine基础镜像是瘦身首选\n\n文章结构：\n1. 基础概念回顾\n2. Dockerfile编写技巧\n3. Docker Compose编排\n4. 生产环境部署\n\n大纲已完成，你看结构是否合适？", "timestamp": "2026-04-18T11:02:00Z"},
+    {"id": "m3", "role": "user", "content": "大纲不错，多加点实际案例，特别是踩坑经验", "timestamp": "2026-04-18T11:15:00Z"},
+    {"id": "m4", "role": "assistant", "content": "明白！我来调整大纲，增加实际案例：\n\n📝 调整后的结构：\n1. Docker基础概念（精简）\n2. Dockerfile编写\n   - 常见错误案例\n   - 优化前后对比\n3. Docker Compose\n   - 完整项目示例\n   - 网络配置技巧\n4. 生产部署\n   - 健康检查配置\n   - 日志管理方案\n5. 踩坑经验集（新增）\n   - 5个真实踩坑案例\n   - 每个案例含解决方案\n\n正在完善中...", "timestamp": "2026-04-18T11:16:00Z"}
+  ],
+  "createdAt": "2026-04-18T11:00:00Z",
+  "updatedAt": "2026-04-18T11:16:00Z"
+}
